@@ -1,0 +1,85 @@
+{% extends 'apps/base.html' %}
+{% load custom_tags %}
+{% block title %}
+    Detail Product
+{% endblock %}
+{% block main_content %}
+
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'main_page' %}">Categories</a></li>
+                        <li class="breadcrumb-item active">Product Detail</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <form method="post" action="{% url 'order_create' %}">
+            {% csrf_token %}
+            <input class="form-control" name="user" type="number" value="{{ user.pk }}" hidden>
+            {#                    <input class="form-control" name="type" type="number" value="new" hidden>#}
+            <input class="form-control" name="product" type="number" value="{{ product.pk }}" hidden>
+            <div class="d-flex justify-content-between">
+                <label class="form-label" for="split-login-email">
+                    Telefon nomer</label>
+            </div>
+            <input type="text" name="phone" id="phone-mask" class="form-control" value="{{ change_phone }}">
+            <div class="mb-2">
+                <label class="form-label" for="formGroupEmailInput">Soni:</label>
+                <input class="form-control" placeholder="Neshta kerakligini yozing 1 dan 10 gacha" min="0"
+                       max="10" name="count"
+                       type="number">
+            </div>
+            <span style="padding-bottom: 200px;"></span>
+            <div class="d-grid gap-2 col-6 mx-auto" style="margin-top: 20px;">
+                <button class="btn btn-primary" name="submit" type="submit">Buyurtma berish</button>
+            </div>
+        </form>
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="about-info">
+                            <div class="media">
+                                <img height="300" width="440" src="{{ product.image.url }}" class="mr-2" alt="...">
+                                <div class="media-body">
+                                    <div class="media heading"> Salom
+                                        <ul>
+                                            <li>
+                                                <span class="title-span">Name : </span>
+                                                <span class="info-span">{{ product.name }}</span>
+                                            </li>
+                                            <li>
+                                                <span class="title-span">Price : </span>
+                                                <span class="info-span">{{ product.price }}</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <span class="title-span">About : </span>
+                                    <p>{{ product.description|safe }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block custom_js %}
+    
+    <script>
+        $('#phone-mask').inputmask({
+            "mask": "+\\9\\98(99) 999-99-99"
+        });
+        $('#messages-modal').modal('show');
+    </script>
+{% endblock %}

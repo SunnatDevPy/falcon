@@ -1,0 +1,90 @@
+<div class="navbar-vertical-content scrollbar">
+    <ul class="navbar-nav flex-column mb-3" id="navbarVerticalNav">
+        <li class="nav-item">
+            <ul class="nav collapse show" id="dashboard">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/" aria-expanded="false">
+                        <div class="d-flex align-items-center"><span
+                                class="nav-link-text ps-1">Bosh sahifa</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'category_to_product' %}" aria-expanded="false">
+                        <div class="d-flex align-items-center"><span
+                                class="nav-link-text ps-1">Mahsulotlar</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'order_list' %}?pk={{ user.pk }}" aria-expanded="false">
+                        <div class="d-flex align-items-center"><span
+                                class="nav-link-text ps-1">Buyurtmalar</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'love-product' %}" aria-expanded="false">
+                        <div class="d-flex align-items-center"><span
+                                class="nav-link-text ps-1">Yoqtirgan mahsulotlarim</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+
+            <hr class="mb-0 navbar-vertical-divider"/>
+            <ul class="nav collapse show" id="dashboard">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'market' %}" aria-expanded="false">
+                        <div class="d-flex align-items-center"><span
+                                class="nav-link-text ps-1">Market</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/admin_page/urls" aria-expanded="false">
+                        <div class="d-flex align-items-center"><span
+                                class="nav-link-text ps-1">Oqim</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/admin_page/stats" aria-expanded="false">
+                        <div class="d-flex align-items-center"><span
+                                class="nav-link-text ps-1">Statistika</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/admin_page/requests" aria-expanded="false">
+                        <div class="d-flex align-items-center"><span
+                                class="nav-link-text ps-1">So'rovlar</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/admin_page/competition" aria-expanded="false">
+                        <div class="d-flex align-items-center"><span
+                                class="nav-link-text ps-1">Konkurs</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/admin_page/withdraw" aria-expanded="false">
+                        <div class="d-flex align-items-center"><span
+                                class="nav-link-text ps-1">To'lov</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/admin_page/diagrams" aria-expanded="false">
+                        <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Diagrammalar</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+        </li>
+    </ul>
+</div>

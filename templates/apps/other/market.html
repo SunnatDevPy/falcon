@@ -1,0 +1,135 @@
+{% extends 'apps/base.html' %}
+
+{% block main_content %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Oqim yaratish</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="POST" class="form-class">
+                                <input type="hidden" name="csrfmiddlewaretoken"
+                                       value="JVmyF0sf4vZw03RWyocIELGrenW0owfRS3DQphaU4fxrrC2CqRkeEqJxx0eh7ysv">
+                                <input name="product_id" type="hidden" id="hidden_product" value="test">
+
+                                Oqim nomi <input type="text" name="title" class="form-control" placeholder
+                                                 mt-2="Oqim uchun nom kiriting" required id="id_title">
+
+                                Chegirma <input type="text" name="discount" class="form-control" placeholder
+                                                mt-2="Chegirma miqdori: {{ product.benefit }} so&#x27;mgacha"
+                                                id="id_discount">
+
+                                <input type="submit" class="btn btn-primary mt-4" value="Oqim yaratish">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <br>
+                <br>
+                <h3 class="text-center"> Hozirda sotuvda bor <br> mahsulotlar </h3>
+                <br>
+
+                <div class="container border-bottom-4">
+                    <div class="header_tab_menu">
+                        <div class="header_menu" style="overflow: auto">
+                            <a href="/admin_page/market/" class="btn btn-default"> Hammasi </a>
+                            <a href="/admin_page/market/?category=top" class="btn btn-default"> Top tovarlar </a>
+
+                            <a href="/admin_page/market/?category=uy-uchun"
+                               class="btn btn-default"> Uy uchun </a>
+                            <a href="/admin_page/market/?category=bolalar-uchun"
+                               class="btn btn-default"> Bolalar uchun </a>
+                            <a href="/admin_page/market/?category=sovga"
+                               class="btn btn-default"> Sovg&#x27;a </a>
+                            <a href="/admin_page/market/?category=ayollar"
+                               class="btn btn-default"> Ayollar </a>
+                            <a href="/admin_page/market/?category=davolovchi-mahsulotlar"
+                               class="btn btn-default"> Davolovchi mahsulotlar </a>
+                            <a href="/admin_page/market/?category=erkaklar-uchun"
+                               class="btn btn-default"> Erkaklar uchun </a>
+                            <a href="/admin_page/market/?category=fitnes"
+                               class="btn btn-default"> Fitnes </a>
+                            <a href="/admin_page/market/?category=davolovchi-mazlar"
+                               class="btn btn-default"> Davolovchi mazlar </a>
+                            <a href="/admin_page/market/?category=moshina-uchun"
+                               class="btn btn-default"> Moshina uchun </a>
+                            <a href="/admin_page/market/?category=kitoblar"
+                               class="btn btn-default"> Kitoblar </a>
+                            <a href="/admin_page/market/?category=aqlli-soatlar"
+                               class="btn btn-default"> Aqlli soatlar </a>
+                            <a href="/admin_page/market/?category=atir"
+                               class="btn btn-default"> Atir </a>
+                            <a href="/admin_page/market/?category=yangi-yel-maxsulotlari"
+                               class="btn btn-default"> Yangi yel maxsulotlari </a>
+                        </div>
+                        <div class="search-box" style="width: 100%;">
+                            <form action="/admin_page/market/" method="GET" class="position-relative"
+                                  style="width: 100%"
+                                  data-bs-display="static" autocomplete="off">
+                                <input type="hidden" name="csrfmiddlewaretoken"
+                                       value="JVmyF0sf4vZw03RWyocIELGrenW0owfRS3DQphaU4fxrrC2CqRkeEqJxx0eh7ysv">
+                                <input id="search-input" name="q" class="form-control search-input" type="search"
+                                       placeholder="Qidiruv..." aria-label="Search"/>
+                                <span class="fas fa-search search-box-icon"></span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-sm-4 p-2">
+                        <div class="card">
+                            <a href="/product-detail/bolalar-uchun-alifbo" target="_blank">
+                                <img class="card-img-top" src="/media/product/IMG_1642.jpeg" alt="Bolalar uchun alifbo">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="/product-detail/bolalar-uchun-alifbo" target="_blank">
+                                        Bolalar uchun alifbo
+                                    </a>
+                                </h5>
+                                <p class="text-muted"> 129000 so'm </p>
+                            </div>
+
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">To'lov: <strong>30000 </strong></li>
+
+                                <li class="list-group-item">Zaxirada: <strong> 950 ta </strong>
+                                </li>
+
+                                <li class="list-group-item">Chegirma: <strong> yuq </strong>
+                                </li>
+
+                            </ul>
+
+                            <!-- <form method="post"> <input type="hidden" name="csrfmiddlewaretoken" value="JVmyF0sf4vZw03RWyocIELGrenW0owfRS3DQphaU4fxrrC2CqRkeEqJxx0eh7ysv"> <input type="hidden" name="product_id" value="424"> <input type="submit" value="Oqim yaratish" class="btn btn-primary"> </form> -->
+
+                            <a href="https://t.me/alijahon_uz_Internet_magazin/1457"
+                               class="btn bg-danger text-white mt-2">Reklama
+                                Posti</a>
+                            <button class="btn btn-primary btn_open_modal" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal" name="424">
+                                Oqim yaratish
+                            </button>
+                            <a href="/admin_page/product/424" class="btn bg-danger text-white mt-2">Batafsil</a>
+                        </div>
+                    </div>
+                    
+                    {% include 'apps/parth/pagination.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

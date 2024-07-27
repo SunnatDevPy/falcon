@@ -1,0 +1,29 @@
+<div class="card-footer border-top d-flex justify-content-center">
+    {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}">
+            <button class="btn btn-falcon-default btn-sm me-2" type="button"
+                    data-bs-toggle="tooltip" data-bs-placement="top" title="Prev"><span
+                    class="fas fa-chevron-left"></span></button>
+        </a>
+    {% endif %}
+    {% if page_obj.has_previous %}
+        <a class="btn btn-sm btn-falcon-default text-primary me-2"
+           href="?page={{ page_obj.previous_page_number }}">{{ page_obj.number|add:'-1' }}</a>
+    {% endif %}
+
+    <a class="btn btn-sm btn-falcon-default me-2" href="#!"><span class="fas fa-ellipsis-h"></span></a>
+
+    {% if page_obj.has_next %}
+        <a class="btn btn-sm btn-falcon-default me-2"
+           href="?page={{ page_obj.next_page_number }}">{{ page_obj.number|add:'+1' }}</a>
+
+    {% endif %}
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">
+            <button class="btn btn-falcon-default btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="top"
+                    title="Next"><span class="fas fa-chevron-right"></span>
+            </button>
+        </a>
+    {% endif %}
+</div>
